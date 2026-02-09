@@ -15,11 +15,8 @@ jobs:
 
       - name: Validate HTML
         run: |
-          docker run --rm \
-            -v "$PWD:/workspace" \
-            ghcr.io/svenkreiss/html5validator \
-            /workspace
-
+          npm install -g html-validate
+          html-validate "**/*.html"
 
       - name: Check broken links
         uses: lycheeverse/lychee-action@v1
