@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    .hello {
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      background: linear-gradient(90deg, #00f5ff, #ff00c8, #00f5ff);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation:
+        glow 2s ease-in-out infinite alternate,
+        blink 1.8s infinite,
+        gradient 4s linear infinite;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow:
+          0 0 5px rgba(0, 245, 255, 0.4),
+          0 0 15px rgba(255, 0, 200, 0.3);
+      }
+      to {
+        text-shadow:
+          0 0 15px rgba(0, 245, 255, 0.8),
+          0 0 35px rgba(255, 0, 200, 0.6);
+      }
+    }
+
+    @keyframes blink {
+      0%, 90%, 100% {
+        opacity: 1;
+      }
+      92%, 96% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes gradient {
+      to {
+        background-position: 200% center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hello">Hello World</div>
+</body>
+</html>
